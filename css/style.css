@@ -1432,6 +1432,10 @@ a:visited {
 .swiper-pagination-progressbar span {
   background: var(--red)!important
 }
+.backdrop-blur-effect {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px)
+}
 .h1,
 h1 {
   font-size: var(--font-size-h1)
