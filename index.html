@@ -6,10 +6,13 @@
 	<meta charset="UTF-8" />
 	<meta name="format-detection" content="telephone=no" />
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20241104110456" />
+	<link rel="stylesheet" href="css/style.min.css?_v=20241105143634" />
 	<link rel="shortcut icon" href="favicon.ico" />
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<script>
+		let path = window.location.pathname;
+	</script>
 </head>
 
 <body class="body">
@@ -36,7 +39,7 @@
 							</li>
 						</ul>
 					</nav>
-					<button class="text-s flex items-center justify-center uppercase rounded-30 h-[.43rem] w-[2.33rem] border border-white border-solid px-16 py-12 text-white font-medium bg-transparent hover:bg-white hover:text-black btn-transition lg:mr-12 mb-32 lg:mb-0">
+					<button data-modal="callback" class="text-s flex items-center justify-center uppercase rounded-30 h-[.43rem] w-[2.33rem] border border-white border-solid px-16 py-12 text-white font-medium bg-transparent hover:bg-white hover:text-black btn-transition lg:mr-12 mb-32 lg:mb-0">
 						<span>Отримати консультацію</span>
 					</button>
 					<div class="flex">
@@ -68,20 +71,27 @@
 		<main>
 			<section class="lg:h-[100vh] h-[6.7rem] sm:h-[8rem] pt-[var(--header-height)] pb-[var(--section-padding)] promo relative flex items-end overflow-hidden">
 				<div class="container">
-					<div class="lg:flex text-white justify-between w-full py-24 border-t border-light-grey border-solid">
-						<h1 class="max-w-[8rem] mb-16 lg:mb-0">
+					<picture>
+						<source srcset="img/promo_bg.webp" media="(min-width: 640px)" />
+						<img src="img/promo_bg_sm.webp" alt="Promo Background" class="promo-bg" />
+					</picture>
+					<div class="lg:flex text-white justify-between w-full py-24 border-t border-light-grey border-solid relative z-10">
+						<h1 data-aos="fade-up" data-aos-delay="500" class="max-w-[8rem] mb-16 lg:mb-0">
 							Будуємо не будинки,
 							<span class="sm:block font-bold">а ваш особистий простір</span>
 						</h1>
-						<button class="text-s w-[2.48rem] flex items-center justify-center uppercase rounded-30 h-[.54rem] px-16 py-12 text-white font-medium btn-gradient">
-							<span>Отримати консультацію</span>
-						</button>
+						<div data-aos-delay="600" data-aos="fade-up">
+							<button data-modal="callback" class="text-s w-[2.48rem] flex items-center justify-center uppercase rounded-30 h-[.54rem] px-16 py-12 text-white font-medium btn-gradient">
+								<span>Отримати консультацію</span>
+							</button>
+						</div>
+
 					</div>
 				</div>
 			</section>
 			<section class="sm:py-[1.3rem] py-[1rem]">
 				<div class="container">
-					<div class="flex justify-between mb-32">
+					<div data-aos="fade-up" class="flex justify-between mb-32">
 						<h2 class="h3 font-medium max-w-[4.5rem] lg:max-w-[6rem]">
 							Status House – ваш шлях до сучасного будинку
 						</h2>
@@ -90,7 +100,7 @@
 						</button>
 					</div>
 					<div class="grid lg:grid-cols-2 gap-20 mb-32 sm:mb-0">
-						<div>
+						<div data-aos="fade-up" data-aos-delay="200">
 							<div class="font-medium mb-16">
 								Status House займається будівництвом із використанням новітніх
 								технологій та матеріалів. Ми пропонуємо повний комплекс
@@ -118,26 +128,26 @@
 								</div>
 							</div>
 						</div>
-						<div class="image w-full h-[2.55rem] sm:h-[3.77rem]">
+						<div data-aos="fade-up" data-aos-delay="200" class="image w-full h-[2.55rem] sm:h-[3.77rem]">
 							<img src="img/white_house.webp" alt="white_house" />
 						</div>
 					</div>
-					<button class="text-s flex items-center justify-center uppercase rounded-30 h-[.43rem] border border-black border-solid px-16 py-12 text-black font-medium bg-transparent hover:bg-black hover:text-white btn-transition lg:mr-12 mb-32 lg:mb-0 mt-auto sm:hidden w-full">
+					<button class="text-s flex items-center justify-center uppercase rounded-30 h-[.43rem] border border-black border-solid px-16 py-12 text-black font-medium bg-transparent hover:bg-black hover:text-white btn-transition lg:mr-12 mt-auto sm:hidden w-full">
 						<span>про компанію </span>
 					</button>
 				</div>
 			</section>
-			<section>
+			<section data-aos="fade-up">
 				<div class="video">
 					<img src="img/video.webp" alt="video" />
-					<svg class="size-[.48rem] sm:size-[.83rem] fill-white absolute duration-[.35s] top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 ease-linear border border-white border-solid rounded">
+					<svg class="size-[.48rem] sm:size-[.83rem] fill-white absolute duration-[.35s] top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 ease-linear border border-white border-solid rounded lg:hover:opacity-50">
 						<use href="#play-icon"></use>
 					</svg>
 				</div>
 			</section>
 			<section>
 				<div class="container pt-[1rem] sm:pt[1.3rem] pb-[var(--section-padding)]">
-					<div class="flex justify-between mb-32">
+					<div data-aos="fade-up" data-aos-delay="200" class="flex justify-between mb-32">
 						<h2 class="h3 font-medium max-w-[4.5rem] lg:max-w-[6rem]">
 							Наші проєкти
 						</h2>
@@ -145,7 +155,7 @@
 							<span>Більше проєктів </span>
 						</button>
 					</div>
-					<div class="swiper mb-36" data-swiper="projects">
+					<div data-aos="fade-up" data-aos-delay="200" class="swiper mb-36" data-swiper="projects">
 						<div class="swiper-wrapper">
 							<div class="swiper-slide">
 								<div class="grid grid-cols-1 sm:grid-cols-12 gap-20">
@@ -163,7 +173,7 @@
 											<img src="img/slider_house_2.webp" alt="house" />
 										</div>
 										<div class="image h-[1.84rem]">
-											<img src="img/slider_house_2.webp" alt="house" />
+											<img src="img/slider_house_3.webp" alt="house" />
 										</div>
 									</div>
 									<div class="lg:col-start-9 sm:col-start-8 sm:col-end-13 flex flex-col justify-end">
@@ -203,7 +213,7 @@
 											<img src="img/slider_house_2.webp" alt="house" />
 										</div>
 										<div class="image h-[1.84rem]">
-											<img src="img/slider_house_2.webp" alt="house" />
+											<img src="img/slider_house_3.webp" alt="house" />
 										</div>
 									</div>
 									<div class="lg:col-start-9 sm:col-start-8 sm:col-end-13 flex flex-col justify-end">
@@ -243,7 +253,7 @@
 											<img src="img/slider_house_2.webp" alt="house" />
 										</div>
 										<div class="image h-[1.84rem]">
-											<img src="img/slider_house_2.webp" alt="house" />
+											<img src="img/slider_house_3.webp" alt="house" />
 										</div>
 									</div>
 									<div class="lg:col-start-9 sm:col-start-8 sm:col-end-13 flex flex-col justify-end">
@@ -270,20 +280,20 @@
 						</div>
 					</div>
 					<div class="flex gap-20 justify-center">
-						<div class="size-[.48rem] sm:size-[.62rem] border border-black border-solid rounded flex justify-center items-center projects-prev">
+						<button class="size-[.48rem] sm:size-[.62rem] border border-black border-solid rounded flex justify-center items-center projects-prev lg:hover:opacity-70 transition-opacity">
 							<svg class="size-24 flex justify-center items-center fill-none stroke-[var(--black)] rotate-180">
 								<use href="#shevron-icon"></use>
 							</svg>
-						</div>
-						<div class="size-[.48rem] sm:size-[.62rem] border border-black border-solid rounded flex justify-center items-center projects-next">
+						</button>
+						<button class="size-[.48rem] sm:size-[.62rem] border border-black border-solid rounded flex justify-center items-center projects-next lg:hover:opacity-70 transition-opacity">
 							<svg class="size-24 flex justify-center items-center fill-none stroke-[var(--black)]">
 								<use href="#shevron-icon"></use>
 							</svg>
-						</div>
+						</button>
 					</div>
 				</div>
 			</section>
-			<section class="pt-[var(--section-padding)] pb-[1.3rem] sm-[1.8rem]">
+			<section data-aos="fade-up" data-aos-delay="200" class="pt-[var(--section-padding)] pb-[1.3rem] sm-[1.8rem]">
 				<div class="container">
 					<h2 class="h3 font-medium max-w-[7.45rem] mx-auto text-center mb-32">
 						Зробіть перший крок! Залиште свої контактні дані і отримайте
@@ -313,7 +323,7 @@
 			</section>
 			<section class="bg-black py-[.6rem] cm:pt-[1rem] text-white">
 				<div class="container">
-					<div class="flex justify-between mb-32 lg:mb-48">
+					<div data-aos="fade-up" data-aos-delay="200" class="flex justify-between mb-32 lg:mb-48">
 						<h2 class="h3 text-white font-medium max-w-[4.5rem] lg:max-w-[6rem]">
 							Основні послуги
 						</h2>
@@ -321,7 +331,7 @@
 							<span>Дізнатися більше </span>
 						</button>
 					</div>
-					<div class="border-t border-accent border-solid py-24 grid lg:grid-cols-2 gap-20">
+					<div data-aos="fade-up" data-aos-delay="200" class="border-t border-accent border-solid py-24 grid lg:grid-cols-2 gap-20">
 						<div class="flex lg:justify-between">
 							<div class="text-l font-medium mr-12">01</div>
 							<div class="lg:w-[4.4rem]">
@@ -346,7 +356,7 @@
 							<img src="img/Project 1.webp" alt="Project" />
 						</div>
 					</div>
-					<div class="border-t border-accent border-solid py-24 grid lg:grid-cols-2 gap-20">
+					<div data-aos="fade-up" data-aos-delay="200" class="border-t border-accent border-solid py-24 grid lg:grid-cols-2 gap-20">
 						<div class="flex lg:justify-between">
 							<div class="text-l font-medium mr-12">02</div>
 							<div class="lg:w-[4.4rem]">
@@ -392,7 +402,7 @@
 							<img src="img/Project 2.webp" alt="Project" />
 						</div>
 					</div>
-					<div class="border-t border-accent border-solid py-24 grid lg:grid-cols-2 gap-20">
+					<div data-aos="fade-up" data-aos-delay="200" class="border-t border-accent border-solid py-24 grid lg:grid-cols-2 gap-20">
 						<div class="flex lg:justify-between">
 							<div class="text-l font-medium mr-12">03</div>
 							<div class="lg:w-[4.4rem]">
@@ -439,7 +449,7 @@
 			</section>
 			<section class="pt-100 sm:pt-[1.5rem]">
 				<div class="container">
-					<div class="flex flex-wrap justify-between mb-32 lg:mb-50">
+					<div data-aos="fade-up" class="flex flex-wrap justify-between mb-32 lg:mb-50">
 						<h2 class="h3 font-medium max-w-[4.5rem] mb-32 lg:mb-0 lg:max-w-[6rem]">
 							Реалізація проєкту
 						</h2>
@@ -452,7 +462,7 @@
 							деталями на власний смак.
 						</div>
 					</div>
-					<div class="grid sm:grid-cols-3 gap-20">
+					<div data-aos="fade-up" data-aos-delay="200" class="grid sm:grid-cols-3 gap-20">
 						<div class="sm:col-start-1 sm:col-end-3 lg:col-start-1 lg:col-end-2">
 							<div class="image sm:h-[2.6rem] h-[2rem] mb-16">
 								<img src="img/box.webp" alt="house" />
@@ -476,7 +486,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="py-[1.3rem] sm:py-[1.8rem]">
+			<section data-aos="fade-up" class="py-[1.3rem] sm:py-[1.8rem]">
 				<div class="container">
 					<h2 class="h3 font-medium max-w-[7.45rem] mx-auto text-center mb-32">
 						Зробіть перший крок! Залиште свої контактні дані і отримайте
@@ -504,21 +514,21 @@
 					</form>
 				</div>
 			</section>
-			<section class="relative h-[6.68rem] sm:h-[7.1rem] text-white">
+			<section data-aos="fade-up" data-aos-duration="1200" class="relative h-[6.68rem] sm:h-[7.1rem] text-white">
 				<h2 class="absolute z-10 top-50 sm:top-[.75rem] font-medium left-[var(--container-gap)]">
 					Переваги компанії
 				</h2>
 				<div class="flex gap-20 justify-center absolute bottom-24 w-full z-20">
-					<div class="size-[.48rem] sm:size-[.62rem] border border-white border-solid rounded flex justify-center items-center advantages-prev">
+					<button class="size-[.48rem] sm:size-[.62rem] border border-white border-solid rounded flex justify-center items-center advantages-prev lg:hover:opacity-70 transition-opacity">
 						<svg class="size-24 flex justify-center items-center fill-none stroke-[var(--white)] rotate-180">
 							<use href="#shevron-icon"></use>
 						</svg>
-					</div>
-					<div class="size-[.48rem] sm:size-[.62rem] border border-white border-solid rounded flex justify-center items-center advantages-next">
+					</button>
+					<button class="size-[.48rem] sm:size-[.62rem] border border-white border-solid rounded flex justify-center items-center advantages-next lg:hover:opacity-70 transition-opacity">
 						<svg class="size-24 flex justify-center items-center fill-none stroke-[var(--white)]">
 							<use href="#shevron-icon"></use>
 						</svg>
-					</div>
+					</button>
 				</div>
 				<div class="h-full lg:flex swiper advantages" data-swiper="advantages">
 					<div class="swiper-wrapper lg:px-[var(--container-gap)] w-[100vw]">
@@ -588,14 +598,14 @@
 			</section>
 			<section class="py-[1.3rem] sm:py-[1.8rem]">
 				<div class="container">
-					<h2 class="h3 font-medium max-w-[7.45rem] mx-auto text-center mb-20">
+					<h2 data-aos="fade-up" data-aos-delay="200" class="h3 font-medium max-w-[7.45rem] mx-auto text-center mb-20">
 						Наші партнери
 					</h2>
-					<div class="text-l text-center font-medium mb-32 lg:mb-50">
+					<div data-aos="fade-up" data-aos-delay="200" class="text-l text-center font-medium mb-32 lg:mb-50">
 						Кожен проект - це твір мистецтвазвичайно без допомоги Ми не
 						обходимося.
 					</div>
-					<ul class="flex flex-wrap gap-x-[.4rem] lg:gap-x-[1.1rem] gap-y-16 justify-center">
+					<ul data-aos="fade-up" data-aos-delay="200" class="flex flex-wrap gap-x-[.4rem] lg:gap-x-[1.1rem] gap-y-16 justify-center">
 						<li class="flex items-center justify-center">
 							<a href="#">
 								<div class="w-[1.5rem] sm:w-[2rem] h-max">
@@ -757,6 +767,24 @@
 		</footer>
 
 	</div>
+	<div data-fullscreen class="modal hide">
+
+		<div class="modal__body md:p-x-24   relative  w-full">
+			<div class="modal__content max-w-[10.45rem] mx-auto relative px-24 pt-[.56rem] pb-[.4rem] md:px-[.8rem] md:pt-24 md:pb-[.72rem]">
+
+				<div class="wrapper"></div>
+
+				<button type="button" class="w-32 h-32 top-24 right-24 flex items-center justify-center modal__close absolute rounded">
+					<svg class="w-24 h-24 stroke-2 stroke-white">
+						<use xlink:href="#close"></use>
+					</svg>
+				</button>
+			</div>
+
+		</div>
+
+	</div>
+
 	<svg width="0" height="0" class="none">
 		<symbol xmlns="http://www.w3.org/2000/svg" id="instagram-icon" viewBox="0 0 24 24">
 			<g mask="url(#mask0_2015_841)">
@@ -774,8 +802,13 @@
 		<symbol xmlns="http://www.w3.org/2000/svg" id="shevron-icon" viewBox="0 0 24 24">
 			<path d="M9 18L15 12L9 6" stroke-linecap="round" stroke-linejoin="round" />
 		</symbol>
+		<symbol xmlns="http://www.w3.org/2000/svg" id="close" viewBox="0 0 24 24" fill="none">
+			<path d="M18 6L6 18" stroke-linecap="square" stroke-linejoin="round" />
+			<path d="M6 6L18 18" stroke-linecap="square" stroke-linejoin="round" />
+		</symbol>
 	</svg>
-	<script src="js/app.min.js?_v=20241104110456"></script>
+
+	<script src="js/app.min.js?_v=20241105143634"></script>
 </body>
 
 </html>
