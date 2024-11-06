@@ -3792,6 +3792,27 @@
                 }
             });
         }
+        function aboutSlider() {
+            if (!core_getElement('[data-swiper="aboutSlider"]')) return;
+            new Swiper('[data-swiper="aboutSlider"]', {
+                modules: [ Navigation ],
+                slidesPerView: 1,
+                spaceBetween: 20,
+                breakpoints: {
+                    640: {
+                        slidesPerView: 2
+                    },
+                    1024: {
+                        slidesPerView: 3
+                    }
+                },
+                loop: true,
+                navigation: {
+                    nextEl: ".aboutSlider-next",
+                    prevEl: ".aboutSlider-prev"
+                }
+            });
+        }
         function HeaderComponent() {
             if (header) ;
         }
@@ -6790,8 +6811,16 @@
         isWebp();
         addTouchClass();
         fullVHfix();
-        modules_accordion(".accordion", ".accordion__header", ".accordion__content");
-        modules_accordion(".accordion-tab", ".accordion__header", ".accordion__content");
+        function initAccordionOnSmallScreens() {
+            if (window.innerWidth < 640) modules_accordion(".accordion-services", ".accordion-header", ".accordion-content");
+        }
+        initAccordionOnSmallScreens();
+        window.addEventListener("resize", (() => {
+            document.querySelectorAll(".accordion-content").forEach((content => {
+                content.style.maxHeight = null;
+            }));
+            initAccordionOnSmallScreens();
+        }));
         window.addEventListener("DOMContentLoaded", (() => {
             try {
                 const modal = new modules_modal(core_getElement(".modal"));
@@ -6802,6 +6831,7 @@
                 scrollToAnchor();
                 projects();
                 advantages();
+                aboutSlider();
                 headerFixed();
                 modules_burger();
                 getElements("[data-modal]").forEach((el => {
@@ -6810,6 +6840,7 @@
                         modal.openModal();
                     }));
                 }));
+                new modules_Form(".form-footer").init();
             } catch (e) {
                 console.log(e);
             }
